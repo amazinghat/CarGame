@@ -99,8 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 707951864d755034a87b9f0b1333d13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 1750942524852492, guid: 0024d0a4a5aa18d458d7ae1218475316, type: 2}
   bombDamage: 25
   bombSpeed: 8
+  pointsPerBomb: 5
 --- !u!212 &212765042416669328
 SpriteRenderer:
   m_ObjectHideFlags: 1

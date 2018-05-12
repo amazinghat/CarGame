@@ -9,6 +9,8 @@ public class BanditCarBehaviour : MonoBehaviour {
 	public int banditCarVerticalSpeed;
 	public int banditCarHorizontalSpeed;
 	public float bombDelay;
+    [HideInInspector]
+    public int pointsPerCar;
 
 	private float delay;
 	private GameObject playerCar;
@@ -35,6 +37,7 @@ public class BanditCarBehaviour : MonoBehaviour {
 				this.gameObject.transform.Translate (new Vector3 (0, 1, 0) * banditCarVerticalSpeed * Time.deltaTime);		// wraca na gore
 				if (gameObject.transform.position.y > 6.5f) 
 				{
+                    PointsManager.points += pointsPerCar;
 					Destroy (this.gameObject);		// i znika
 				}
 			}

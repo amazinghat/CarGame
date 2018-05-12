@@ -7,16 +7,20 @@ public class TODO : MonoBehaviour {
     // 1.   Poprawić BoxCollidery samochodów
     //      by przy uderzeniu bocznym nie trigerowało zniszczenia
     //
-    // 2.   Poprawić / zmienić reflektory cywili i bugi świateł przy spawnie i destroy'u
+    // 2.   (feature) Dodać spawn świecących latarni wzdłóż drogi (równo z przewijającą się drogą)
     //
-    // 3.   Dodać spawn świecących latarni wzdłóż drogi (równo z przewijającą się drogą)
+    // 3.   Przy aktywnej tarczy i ciaglym zderzaniu mimo uplywu duration tarcza nie znika (dopiero gdy zdezanie sie skonczy)
     //
-    // 4.   Światła cywili powodują znikanie światła tarczy na graczu -- naprawic?
+    // 4.   Zrandomizować spawnowanie cywili, może też policji
     //
-    // 5.   Przy aktywnej tarczy i ciaglym zderzaniu mimo uplywu duration tarcza nie znika (dopiero gdy zdezanie sie skonczy)
+    // 5.   (feature) podzielić gre na poziomy? Np. trzy:   1. miasto - omijanie cywili
+    //                                                      2. most(zmiana grafiki ulicy, jakieś dziury do omieniecia) + bandyci
+    //                                                      3. policja w deszczu - jakies kaluze, sliganie?
     //
-    // 
+    // 6.   Speed boost niech daje speeda głównie na boki (trochę tylko do przodu)
     //
-
+    // 7.   Zlinearyzowac ruch na boki? Ma jakis taki toporny feeling imo
+    //
+    // 8.   Przeniesc animacje explozji na wierzch?
 
 }

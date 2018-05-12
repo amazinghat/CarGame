@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507884816526540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.125186, y: 1.1112128, z: 0}
+  m_LocalPosition: {x: 1.8942076, y: 0.99459815, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4476144564120042}
@@ -137,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007933289, y: 0.77405906}
+  m_Offset: {x: -0.0023474097, y: 0.763778}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -148,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.30902368, y: 0.14688206}
+  m_Size: {x: 0.18565452, y: 0.12631989}
   m_EdgeRadius: 0
 --- !u!61 &61726597442787390
 BoxCollider2D:
@@ -187,7 +187,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0050644577, y: -0.7547028}
+  m_Offset: {x: -0.010204911, y: -0.7341416}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -198,7 +198,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34099263, y: 0.18559456}
+  m_Size: {x: 0.20734286, y: 0.14447212}
   m_EdgeRadius: 0
 --- !u!108 &108427186936794740
 Light:
@@ -225,7 +225,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -261,7 +261,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -286,6 +286,8 @@ MonoBehaviour:
   civilCarSpeed: 5
   direction: -1
   crashDamage: 20
+  explosion: {fileID: 1750942524852492, guid: 0024d0a4a5aa18d458d7ae1218475316, type: 2}
+  pointsPerCar: 0
 --- !u!212 &212057857225633728
 SpriteRenderer:
   m_ObjectHideFlags: 1
