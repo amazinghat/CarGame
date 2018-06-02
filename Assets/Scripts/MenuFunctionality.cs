@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuFunctionality : MonoBehaviour {
 
@@ -22,5 +23,21 @@ public class MenuFunctionality : MonoBehaviour {
 			blueLight.enabled = !blueLight.enabled;
 			delay = lightDelay;
 		}
+	}
+
+	public void StartButton() {
+		SceneManager.LoadScene(0);
+	}
+
+	public void HighScoresButton() {
+		//SceneManager.LoadScene(2);
+	}
+
+	public void OptionsButton() {
+		//SceneManager.LoadScene(3);
+	}
+
+	public void ExitButton() {
+		Application.Quit();
 	}
 }
