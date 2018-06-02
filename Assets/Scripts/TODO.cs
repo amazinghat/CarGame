@@ -22,5 +22,7 @@ public class TODO : MonoBehaviour {
     // 7.   Zlinearyzowac ruch na boki? Ma jakis taki toporny feeling imo
     //
     // 8.   Przeniesc animacje explozji na wierzch?
+	//
+	// 9.   Dodać dodatkową scenę przed startem gry -> odliczanie 3.. 2.. 1 i dopiero wtedy start
 
 }

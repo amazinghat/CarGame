@@ -60,6 +60,7 @@
      <Compile Include="Assets\Scripts\CivilCarBehaviour.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\MenuFunctionality.cs" />
+     <Compile Include="Assets\Scripts\Pause.cs" />
      <Compile Include="Assets\Scripts\PlayerCarMovement.cs" />
      <Compile Include="Assets\Scripts\PointsManager.cs" />
      <Compile Include="Assets\Scripts\PoliceCarBehaviour.cs" />
