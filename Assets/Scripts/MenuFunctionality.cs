@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class MenuFunctionality : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public Light redLight;
+	public Light blueLight;
+	public float lightDelay;
+	private float delay;
+
+	void Start() {
+		delay = lightDelay;
+		redLight.enabled = true;
+		blueLight.enabled = false;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void Update() {
+		delay -= Time.deltaTime;
+		if (delay <= 0) {
+			redLight.enabled = !redLight.enabled;
+			blueLight.enabled = !blueLight.enabled;
+			delay = lightDelay;
+		}
 	}
 }
