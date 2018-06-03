@@ -24,5 +24,7 @@ public class TODO : MonoBehaviour {
     // 8.   Przeniesc animacje explozji na wierzch?
 	//
 	// 9.   Dodać dodatkową scenę przed startem gry -> odliczanie 3.. 2.. 1 i dopiero wtedy start
+	//
+	// 10.  Mamy 3 życia, podczas gry nigdzie nie widać ile nam jeszcze zostało
 
 }

@@ -8,10 +8,14 @@ public class CarDurabilityManager : MonoBehaviour {
     public GameObject spawnPoint;
     public TextMesh durabilityText;
     public int lifes;
+	public GameObject EndGameScreen;
+	[HideInInspector]
+	public int maxLifes;
     private GameObject playerCar;
 
     void Start()
     {
+		maxLifes = lifes;
         playerCar = (GameObject)Instantiate(playerCarPrefab, spawnPoint.transform.position, Quaternion.identity);
     }
 
@@ -24,7 +28,11 @@ public class CarDurabilityManager : MonoBehaviour {
             if(lifes > 0)
             {
                 StartCoroutine("SpawnaCar");    // ochrona po spawnie, zeby od razu nie zginac
-            }
+			} else if (lifes <= 0)
+			{
+				Time.timeScale = 0;		//zamrażamy grę
+				EndGameScreen.SetActive(true);
+			}
         }
 
         else if (playerCar.GetComponent<PlayerCarMovement>().durability > playerCar.GetComponent<PlayerCarMovement>().maxDurability)
