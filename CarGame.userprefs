@@ -5,12 +5,12 @@
       <File FileName="Assets\Scripts\BanditCarBehaviour.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Bomb.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\TODO.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\MenuFunctionality.cs" Line="20" Column="18" />
+      <File FileName="Assets\Scripts\MenuFunctionality.cs" Line="28" Column="27" />
       <File FileName="Assets\Scripts\Pause.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\EndGame.cs" Line="40" Column="38" />
+      <File FileName="Assets\Scripts\EndGame.cs" Line="36" Column="3" />
       <File FileName="Assets\Scripts\CarDurabilityManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\WaveManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PlayerPrefsX.cs" Line="76" Column="21" />
+      <File FileName="Assets\Scripts\HighScores.cs" Line="17" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

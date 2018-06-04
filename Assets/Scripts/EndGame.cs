@@ -21,7 +21,7 @@ public class EndGame : MonoBehaviour {
 	private int[] highScoresArray = new int[10];
 
 	void Start() {
-		highScoresArray = PlayerPrefsX.GetIntArray("HighScoresArray");
+		highScoresArray = PlayerPrefsX.GetIntArray("HighScoreArray");
 		gainedPointsText.text = PointsManager.points.ToString();
 
 		GameManager = GameObject.Find("GameManager");
@@ -46,6 +46,7 @@ public class EndGame : MonoBehaviour {
 				}
 			}
 		}
+		PlayerPrefsX.SetIntArray("HighScoreArray", highScoresArray);
 	}
 
 	public void RetryButton() {
