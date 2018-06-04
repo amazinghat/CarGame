@@ -22,14 +22,22 @@ public class BanditCarBehaviour : MonoBehaviour {
 		delay = bombDelay;
 	}
 
-	void Update()
+    private void FixedUpdate()
+    {
+        if (playerCar == null)  // sprawdzaj czy auto gracza istnieje
+        {
+            playerCar = GameObject.FindWithTag("Player");
+        }
+        else
+        {
+            banditCarPos = Vector3.Lerp(transform.position, playerCar.transform.position, Time.deltaTime * banditCarHorizontalSpeed);
+            Mathf.Clamp(banditCarPos.x, -2.35f, 2.35f);
+            transform.position = new Vector3(banditCarPos.x, transform.position.y, 0);
+        }
+    }
+
+    void Update()
 	{
-		if (playerCar == null) 	// sprawdzaj czy auto gracza istnieje
-		{
-			playerCar = GameObject.FindWithTag ("Player");
-		} 
-		else 
-		{
 			if (gameObject.transform.position.y > 3.8f && bombsAmount > 0) {		// jesli zaczyna na gorze mapy i ma bomby
 				this.gameObject.transform.Translate (new Vector3 (0, -1, 0) * banditCarVerticalSpeed * Time.deltaTime);		// jedzie w dol
 
@@ -43,9 +51,6 @@ public class BanditCarBehaviour : MonoBehaviour {
 			}
 			else 
 			{
-				banditCarPos = Vector3.Lerp (transform.position, playerCar.transform.position, Time.deltaTime * banditCarHorizontalSpeed);
-				transform.position = new Vector3 (banditCarPos.x, transform.position.y, 0);
-
 				delay -= Time.deltaTime;
 				if (delay <= 0 && bombsAmount > 5) {
 					delay = bombDelay;
@@ -58,8 +63,8 @@ public class BanditCarBehaviour : MonoBehaviour {
 					Instantiate (bomb, transform.position, Quaternion.identity);
 				}
 			}
-		}
-
 	}
+
+	
 
 }

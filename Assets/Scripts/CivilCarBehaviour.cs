@@ -30,14 +30,20 @@ public class CivilCarBehaviour : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D obj)       // kolizja przodem lub tylem z graczem (małe BoxCollidery na przodzie i tyle tylko jako triggery)
     {
-        if(obj.gameObject.tag == "Player")
+        if (obj.gameObject.tag == "Player")
         {
             PointsManager.points -= pointsPerCar;
             obj.gameObject.GetComponent<PlayerCarMovement>().durability -= crashDamage;
             Debug.Log("Gracz w nas wjechał");
             Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
-        } else if (obj.gameObject.tag == "EndOfTheRoad")
+        }
+        else if (obj.gameObject.tag == "Shield")
+        {
+            Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
+        }
+        else if (obj.gameObject.tag == "EndOfTheRoad")
         {
             PointsManager.points += pointsPerCar;
             Destroy(this.gameObject);

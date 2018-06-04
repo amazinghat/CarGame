@@ -52,7 +52,7 @@ public class PoliceCarBehaviour : MonoBehaviour {
         } else
         {
             shootDelay -= Time.deltaTime;               // jak podjechal to zaczyna strzelac
-            if(shootDelay <= 0)
+            if (shootDelay <= 0 && GameObject.FindWithTag("Untouchable") == false)
             {
                 StartCoroutine("Shoot");
                 shootDelay = shootingSeriesDelay;

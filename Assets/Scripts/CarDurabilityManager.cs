@@ -7,6 +7,7 @@ public class CarDurabilityManager : MonoBehaviour {
     public GameObject playerCarPrefab;
     public GameObject spawnPoint;
     public TextMesh durabilityText;
+    public GameObject[] hearts;
     public int lifes;
 	public GameObject EndGameScreen;
 	[HideInInspector]
@@ -15,7 +16,8 @@ public class CarDurabilityManager : MonoBehaviour {
 
     void Start()
     {
-		maxLifes = lifes;
+        durabilityText.GetComponent<MeshRenderer>().sortingLayerName = "Durability";
+        maxLifes = lifes;
         playerCar = (GameObject)Instantiate(playerCarPrefab, spawnPoint.transform.position, Quaternion.identity);
     }
 
@@ -25,6 +27,7 @@ public class CarDurabilityManager : MonoBehaviour {
         {
             Destroy(playerCar);
             lifes--;
+            Destroy(hearts[lifes]);
             if(lifes > 0)
             {
                 StartCoroutine("SpawnaCar");    // ochrona po spawnie, zeby od razu nie zginac

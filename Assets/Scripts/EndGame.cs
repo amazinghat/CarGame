@@ -49,11 +49,15 @@ public class EndGame : MonoBehaviour {
 		PlayerPrefsX.SetIntArray("HighScoreArray", highScoresArray);
 	}
 
-	public void RetryButton() {
-		SceneManager.LoadScene(0);
+	public void RetryButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
 	}
 
-	public void MenuExitButton() {
-		SceneManager.LoadScene(1);
+	public void MenuExitButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
 	}
 }

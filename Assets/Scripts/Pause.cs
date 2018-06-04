@@ -30,8 +30,10 @@ public class Pause : MonoBehaviour {
 		PauseGame();
 	}
 
-	public void MenuExitButton() {
-		SceneManager.LoadScene(1);
+	public void MenuExitButton()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
 	}
 
 	public void ExitButton() {
