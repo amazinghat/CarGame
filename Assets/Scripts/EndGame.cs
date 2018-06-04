@@ -17,7 +17,11 @@ public class EndGame : MonoBehaviour {
 	private GameObject GameManager;
 	private GameObject PlayerCar;
 
+	private int score;
+	private int[] highScoresArray = new int[10];
+
 	void Start() {
+		highScoresArray = PlayerPrefsX.GetIntArray("HighScoresArray");
 		gainedPointsText.text = PointsManager.points.ToString();
 
 		GameManager = GameObject.Find("GameManager");
@@ -29,6 +33,19 @@ public class EndGame : MonoBehaviour {
 			}
 		}
 		altogetherPointsText.text = (int.Parse(gainedPointsText.text) + int.Parse(extraLifesBonusText.text) + int.Parse(noCollisionBonusText.text)).ToString();
+
+		score = int.Parse(altogetherPointsText.text);
+		if (score > highScoresArray[9]) {
+			for (int i = 0; i < 10; i++) {
+				if (score > highScoresArray[i]) {
+					for (int j = 9; j > i; j--) {
+						highScoresArray[j] = highScoresArray[j - 1];
+					}
+					highScoresArray[i] = score;
+					break;
+				}
+			}
+		}
 	}
 
 	public void RetryButton() {
