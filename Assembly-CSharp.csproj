@@ -76,6 +76,7 @@
     <Compile Include="Assets\Scripts\PointsManager.cs" />
     <Compile Include="Assets\Scripts\PoliceCarBehaviour.cs" />
     <Compile Include="Assets\Scripts\RoadInfiniteScrolling.cs" />
+    <Compile Include="Assets\Scripts\SettingsMenu.cs" />
     <Compile Include="Assets\Scripts\Shield.cs" />
     <Compile Include="Assets\Scripts\TODO.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />

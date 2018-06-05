@@ -12,6 +12,7 @@ public class MenuFunctionality : MonoBehaviour {
 
 	public GameObject highScores;
 	public GameObject menuButtons;
+    public GameObject settingsMenu;
 
 	void Start() {
 		delay = lightDelay;
@@ -42,8 +43,10 @@ public class MenuFunctionality : MonoBehaviour {
 		highScores.SetActive(true);
 	}
 
-	public void OptionsButton() {
-		//SceneManager.LoadScene(3);
+	public void OptionsButton()
+    {
+        menuButtons.SetActive(false);
+        settingsMenu.SetActive(true);
 	}
 
 	public void ExitButton() {
