@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798682590755466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.0278575, y: 3.5442255, z: 0}
+  m_LocalPosition: {x: 0.68747807, y: 1.5377679, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0051403046, y: -0.0051398277}
+  m_Offset: {x: -0.0003388524, y: -0.0051398277}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -86,7 +86,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75854254, y: 1.6641574}
+  m_Size: {x: 0.6817192, y: 1.6641574}
   m_EdgeRadius: 0
 --- !u!114 &114358169636324518
 MonoBehaviour:
@@ -104,6 +104,7 @@ MonoBehaviour:
   banditCarVerticalSpeed: 2
   banditCarHorizontalSpeed: 1
   bombDelay: 1.5
+  pointsPerCar: 0
 --- !u!212 &212799841503538980
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -117,6 +118,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 8740aa01441250042ad91884ebda82a5, type: 2}
   m_StaticBatchInfo:

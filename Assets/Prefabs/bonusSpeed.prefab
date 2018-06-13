@@ -87,7 +87,7 @@ MonoBehaviour:
   repairPoints: 0
   damagePoints: 0
   shield: {fileID: 0}
-  speedBoost: 1.3
+  speedBoost: 1.7
   duration: 5
 --- !u!212 &212868698254825802
 SpriteRenderer:
