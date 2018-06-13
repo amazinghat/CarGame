@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class Bonuses : MonoBehaviour {
 
+    public float directionBonus = -0.7f;
+
     [Header("Type of bonus")]
     public bool isDurability;
     public bool isShield;
     public bool isSpeed;
+    public bool isHole;
 
     [Header("Bonuses Settings")]
     public float bonusSpeed = 10f;
 
     [Header("Durability Settings")]
     public float repairPoints;
+
+    [Header("Hole Settings")]
+    public float damagePoints;
 
     [Header("Shield Settings")]
     public GameObject shield;
@@ -27,7 +33,7 @@ public class Bonuses : MonoBehaviour {
 
     void Update()
     {
-        this.gameObject.transform.Translate(new Vector3(0, -1, 0) * bonusSpeed * Time.deltaTime);   // ruch bonusów z drogą
+        this.gameObject.transform.Translate(new Vector3(0, directionBonus, 0) * bonusSpeed * Time.deltaTime);   // ruch bonusów z drogą
     }
 
     private void OnTriggerEnter2D(Collider2D obj)   // rozroznienie działania bonusow przy zebraniu
@@ -52,6 +58,10 @@ public class Bonuses : MonoBehaviour {
                 gameObject.GetComponent<SpriteRenderer>().enabled = false;  // zamiast niszczenia obiektu ukrywany go (bo zniszczy dopiero korutyna na koniec bonusu)
                 isActivated = true;
                 StartCoroutine("SpeedBoostActivated");  // korutyna do speedboosta
+            } else if (isHole == true)
+            {
+                obj.gameObject.GetComponent<PlayerCarMovement>().durability -= damagePoints;
+                Destroy(this.gameObject);
             }
         } else if(obj.gameObject.tag == "EndOfTheRoad" && isActivated == false)      // niezebrane bonusy czyscimy na colliderze za mapa
         {

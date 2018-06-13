@@ -78,11 +78,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a9155f678d29f4cb511578b8e0dc5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  directionBonus: -1
   isDurability: 0
   isShield: 1
   isSpeed: 0
+  isHole: 0
   bonusSpeed: 10
   repairPoints: 0
+  damagePoints: 0
   shield: {fileID: 1503703963336046, guid: 78bc387cc7278c349977a73cd1664193, type: 2}
   speedBoost: 0
   duration: 0
@@ -99,6 +102,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:

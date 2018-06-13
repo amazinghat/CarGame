@@ -33,7 +33,7 @@ public class Pause : MonoBehaviour {
 	public void MenuExitButton()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
 	}
 
 	public void ExitButton() {

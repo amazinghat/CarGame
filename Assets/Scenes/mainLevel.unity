@@ -2655,6 +2655,7 @@ GameObject:
   - component: {fileID: 1745640968}
   - component: {fileID: 1745640964}
   - component: {fileID: 1745640969}
+  - component: {fileID: 1745640970}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2827,7 +2828,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   civilCar: {fileID: 1507884816526540, guid: 0ca1543a41f603f47b48f9ed0c56aa88, type: 2}
   civilCarSpawnDelay: 1
-  civilCarsAmount: 10
+  civilCarsAmount: 100
   banditCar: {fileID: 1798682590755466, guid: 6fc14c7b739fb5d4aa9f6aeddba2bdd3, type: 2}
   bombsAmount: 10
   banditCarVerticalSpeed: 5
@@ -2856,6 +2857,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseObj: {fileID: 1136432112}
+--- !u!114 &1745640970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1745640963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c75c9f33f7e2204096d3cd1c52fc510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hole: {fileID: 1617207922939258, guid: 1da4ffb3f7e3bfb4286d88c4909e19d2, type: 2}
+  minStart: 5
+  maxStart: 10
 --- !u!1 &1770742674
 GameObject:
   m_ObjectHideFlags: 0
