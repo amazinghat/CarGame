@@ -6,7 +6,7 @@ public class WaveManager : MonoBehaviour {
 
     [Header("Wave 1 (Civil Cars")]
     public GameObject civilCar;
-    public float civilCarSpawnDelay;
+	public float civilCarSpawnDelay;
     public int civilCarsAmount;
 
     [Header("Wave 2 (Bandit Cars")]
@@ -39,9 +39,11 @@ public class WaveManager : MonoBehaviour {
     public int pointsPerPoliceCar;
 
 	public GameObject EndGameScreen;
+	public float timeSpeed;
 
     private float[] lanesArray;
     private float spawnDelay;
+	private System.Random ran = new System.Random();
 
     private void Start()
     {
@@ -51,34 +53,34 @@ public class WaveManager : MonoBehaviour {
         lanesArray[2] = 0.75f;
         lanesArray[3] = 2.12f;
         spawnDelay = civilCarSpawnDelay;
+		timeSpeed = 1f;
     }
 
     void Update()
-    {
-        spawnDelay -= Time.deltaTime;
-        if (spawnDelay <= 0 && civilCarsAmount > 0)
-        {
-            spawnCar();                         // spawnuj cywili
-            spawnDelay = civilCarSpawnDelay;
-        }
-        else if (civilCarsAmount <= 0 && is2ndSpawned == false)     // jak sie skoncza cywile
-        {        
-            if (isSpawned == false)     
-            {
-                spawnBanditCar();
-            }
-            else if (isSpawned == true && spawnedBanditCar.GetComponent<BanditCarBehaviour>().bombsAmount < 10 && is2ndSpawned == false)
-            {
-                spawnBanditCar();
-            }
-        } else if (civilCarsAmount <= 0 && policeCarAmount > 0 && spawnedBanditCar == null)
-        {
-            spawnPoliceCar();
-		} else if (policeCarAmount <= 0 && isLeft == false && isRight == false)
-		{
-			Time.timeScale = 0;
-			EndGameScreen.SetActive(true);
-		}
+    {		
+		Debug.Log ("czas to: " + Time.timeScale);
+			spawnDelay -= Time.deltaTime;
+			if (spawnDelay <= 0 && civilCarsAmount > 0) {
+				spawnCar ();                         // spawnuj cywili
+				spawnDelay = Random.Range (0.3f, 1.5f);
+			} else if (civilCarsAmount <= 0 && is2ndSpawned == false) {     // jak sie skoncza cywile
+				if (isSpawned == false) {
+					spawnBanditCar ();
+				} else if (isSpawned == true && spawnedBanditCar.GetComponent<BanditCarBehaviour> ().bombsAmount < 10 && is2ndSpawned == false) {
+					spawnBanditCar ();
+				}
+			} else if (civilCarsAmount <= 0 && policeCarAmount > 0 && spawnedBanditCar == null) {
+				spawnPoliceCar ();
+		} else if (policeCarAmount <= 0 && isLeft == false && isRight == false && civilCarsAmount <= 0) {
+				//Time.timeScale = 0;
+				//EndGameScreen.SetActive(true);
+				civilCarsAmount = 50;
+				policeCarAmount = 10;
+				is2ndSpawned = false;
+				isSpawned = false;
+				timeSpeed += 0.1f;
+				Time.timeScale = timeSpeed;
+			}
     }
 
     void spawnPoliceCar()
@@ -150,12 +152,14 @@ public class WaveManager : MonoBehaviour {
 
     void spawnCar()
     {
-        int lane = Random.Range(0, 4);      // spawn na losowym pasie
+		int[] weightedArray = new int[] { 0, 1, 2, 2, 2, 3, 3, 3 };		// obciazana losowosc linii
+		//Random ran = new Random ();
+		int lane = weightedArray[ran.Next(weightedArray.Length)];      // spawn na losowym pasie
         if (lane == 0 || lane == 1)
         {
             GameObject car = (GameObject)Instantiate(civilCar, new Vector3(lanesArray[lane], 6f, 0), Quaternion.Euler(new Vector3(0,0,180)));
             car.GetComponent<CivilCarBehaviour>().direction = 1;
-            car.GetComponent<CivilCarBehaviour>().civilCarSpeed = 10;
+            car.GetComponent<CivilCarBehaviour>().civilCarSpeed = 16;
             car.GetComponent<CivilCarBehaviour>().pointsPerCar = pointsPerCivilCar;
         }
         if (lane == 2 || lane == 3)

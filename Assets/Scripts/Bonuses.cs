@@ -5,6 +5,8 @@ using UnityEngine;
 public class Bonuses : MonoBehaviour {
 
     public float directionBonus = -0.7f;
+	public GameObject explosion;
+	private GameObject GameManager;
 
     [Header("Type of bonus")]
     public bool isDurability;
@@ -30,6 +32,11 @@ public class Bonuses : MonoBehaviour {
     public float speedBoost;
     public float duration;
     private bool isActivated = false;
+
+
+	void Start(){
+		GameManager = GameObject.Find("GameManager");
+	}
 
     void Update()
     {
@@ -61,6 +68,7 @@ public class Bonuses : MonoBehaviour {
             } else if (isHole == true)
             {
                 obj.gameObject.GetComponent<PlayerCarMovement>().durability -= damagePoints;
+				Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
                 Destroy(this.gameObject);
             }
         } else if(obj.gameObject.tag == "EndOfTheRoad" && isActivated == false)      // niezebrane bonusy czyscimy na colliderze za mapa
@@ -77,7 +85,8 @@ public class Bonuses : MonoBehaviour {
             Time.timeScale = speedBoost;                //  timeScale odpowiada za szybkosc czasu gry, 1 to default
             yield return null;
         }
-        Time.timeScale = 1f;                            // koniec boosta -> powrot do normalnego czasu
+		Debug.Log ("timeSpeed: " + GameManager.GetComponent<WaveManager>().timeSpeed);
+		Time.timeScale = GameManager.GetComponent<WaveManager>().timeSpeed;                            // koniec boosta -> powrot do normalnego czasu
         Destroy(this.gameObject);
     }
 }

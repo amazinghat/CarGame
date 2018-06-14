@@ -3060,7 +3060,7 @@ MonoBehaviour:
   civilCarSpawnDelay: 1
   civilCarsAmount: 50
   banditCar: {fileID: 1798682590755466, guid: 6fc14c7b739fb5d4aa9f6aeddba2bdd3, type: 2}
-  bombsAmount: 20
+  bombsAmount: 10
   banditCarVerticalSpeed: 5
   banditCarHorizontalSpeed: 2
   bombDelay: 1
@@ -3075,6 +3075,7 @@ MonoBehaviour:
   pointsPerBomb: 5
   pointsPerPoliceCar: 20
   EndGameScreen: {fileID: 132557592}
+  timeSpeed: 1
 --- !u!114 &1745640969
 MonoBehaviour:
   m_ObjectHideFlags: 0
